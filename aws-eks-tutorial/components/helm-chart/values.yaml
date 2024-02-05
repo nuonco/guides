@@ -1,0 +1,30 @@
+---
+env:
+  DATABASE_URL: ""
+  AUTH_MODE: ""
+  LOGICAL_PUBLISHER_HOST: ""
+  PG_PROXY_PASSWORD: ""
+
+image:
+  repository: ""
+  tag: ""
+
+serviceAccount:
+  name: api
+  annotations: {}
+
+api:
+  port: 8080
+
+  ingresses:
+    public_domain: api.INSTALL_PUBLIC_DOMAIN
+
+  nlbs:
+    public_domain: nlb.INSTALL_PUBLIC_DOMAIN
+    public_domain_certificate: nbl.PUBLIC_DOMAIN_CERTIFICATE
+
+  autoscaling:
+    minReplicas: 1
+    maxReplicas: 1
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 50
