@@ -42,7 +42,7 @@ module "ingress" {
     ex-https = {
       port            = 443
       protocol        = "HTTPS"
-      certificate_arn = module.cert.arn
+      certificate_arn = module.cert.acm_certificate_arn
 
       forward = {
         target_group_key = "api"
