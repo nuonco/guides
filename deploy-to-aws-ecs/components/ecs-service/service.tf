@@ -24,8 +24,9 @@ module "service" {
       memory_reservation = 100
       environment = [
         {
-          name  = "NUON_APP_ID"
-          value = var.app_id
+          name = "NUON_APP_ID"
+          # value = var.app_id
+          value = "fake_app_id"
         },
         {
           name  = "NUON_ORG_ID"
