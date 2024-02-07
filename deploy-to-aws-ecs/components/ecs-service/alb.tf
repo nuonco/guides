@@ -52,9 +52,9 @@ module "ingress" {
 
   target_groups = {
     api = {
-      name_prefix       = "h1"
+      name              = "api"
       protocol          = "HTTP"
-      port              = 80
+      port              = 8080
       target_type       = "instance"
       create_attachment = false
     }

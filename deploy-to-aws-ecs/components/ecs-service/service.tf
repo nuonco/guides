@@ -17,7 +17,7 @@ module "service" {
         {
           name          = "http"
           containerPort = 8080
-          hostPort      = 80
+          hostPort      = 8080
           protocol      = "http"
         }
       ]
@@ -31,7 +31,7 @@ module "service" {
     service = {
       target_group_arn = module.ingress.target_groups["api"].arn
       container_name   = "api"
-      container_port   = 80
+      container_port   = 8080
     }
   }
 
@@ -39,9 +39,9 @@ module "service" {
   security_group_rules = {
     ingress_http = {
       type                     = "ingress"
-      from_port                = 80
-      to_port                  = 80
-      protocol                 = "http"
+      from_port                = 0
+      to_port                  = 8080
+      protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = module.ingress.security_group_arn
     }
