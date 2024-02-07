@@ -64,7 +64,7 @@ module "ingress" {
         port                = "traffic-port"
         healthy_threshold   = 2
         unhealthy_threshold = 2
-        timeout             = 10
+        timeout             = 5
         protocol            = "HTTP"
         matcher             = "200-399"
       }
