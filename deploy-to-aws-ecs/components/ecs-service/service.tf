@@ -39,7 +39,7 @@ module "service" {
     ingress_http = {
       type                     = "ingress"
       from_port                = 0
-      to_port                  = 5000
+      to_port                  = 0
       protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = module.ingress.security_group_id
