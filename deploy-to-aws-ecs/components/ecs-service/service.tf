@@ -22,7 +22,20 @@ module "service" {
         }
       ]
       memory_reservation = 100
-      environment        = []
+      environment = [
+        {
+          name  = "NUON_APP_ID"
+          value = var.app_id
+        },
+        {
+          name  = "NUON_ORG_ID"
+          value = var.org_id
+        },
+        {
+          name  = "NUON_INSTALL_ID"
+          value = var.install_id
+        },
+      ]
     }
   }
 

@@ -21,7 +21,15 @@ variable "image_tag" {
   type = string
 }
 
-variable "update_this_var" {
+variable "app_id" {
+  type = string
+}
+
+variable "org_id" {
+  type = string
+}
+
+variable "install_id" {
   type = string
 }
 

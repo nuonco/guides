@@ -26,32 +26,8 @@ func discoverHandler(ctx *gin.Context) {
 				Path:        "/introspect/env",
 			},
 			{
-				Description: introspection.TerraformDescription,
-				Path:        "/introspect/terraform",
-			},
-			{
-				Description: introspection.SecretsDescription,
-				Path:        "/introspect/secrets",
-			},
-			{
-				Description: introspection.DefaultsDescription,
-				Path:        "/introspect/defaults",
-			},
-			{
-				Description: introspection.SandboxDescription,
-				Path:        "/introspect/sandbox",
-			},
-			{
 				Description: introspection.NuonDescription,
 				Path:        "/introspect/nuon",
-			},
-			{
-				Description: introspection.DockerBuildDescription,
-				Path:        "/introspect/docker-build",
-			},
-			{
-				Description: introspection.ExternalImageDescription,
-				Path:        "/introspect/external-image",
 			},
 			{
 				Description: "/livez check",
