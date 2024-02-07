@@ -23,9 +23,6 @@ module "service" {
       ]
       memory_reservation = 100
       environment        = []
-      health_check = {
-        command = ["CMD-SHELL", "curl -f localhost:5000/livez || exit 1"]
-      }
     }
   }
 
