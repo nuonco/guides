@@ -41,7 +41,7 @@ module "service" {
       type                     = "ingress"
       from_port                = 80
       to_port                  = 80
-      protocol                 = "http"
+      protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = module.ingress.security_group_arn
     }
