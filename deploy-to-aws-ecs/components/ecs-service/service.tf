@@ -43,7 +43,7 @@ module "service" {
       to_port                  = 8080
       protocol                 = "tcp"
       description              = "Service port"
-      source_security_group_id = module.ingress.security_group_arn
+      source_security_group_id = module.ingress.security_group_id
     }
     egress_all = {
       type        = "egress"
