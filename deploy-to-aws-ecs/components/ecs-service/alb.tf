@@ -3,7 +3,7 @@ module "ingress" {
 
   name                       = var.service_name
   vpc_id                     = var.vpc_id
-  subnets                    = local.subnet_id_list
+  subnets                    = local.public_subnet_id_list
   enable_deletion_protection = false
 
   security_group_ingress_rules = {
