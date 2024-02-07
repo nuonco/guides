@@ -62,8 +62,8 @@ module "ingress" {
         interval            = 10
         path                = "/livez"
         port                = "traffic-port"
-        healthy_threshold   = 1
-        unhealthy_threshold = 1
+        healthy_threshold   = 2
+        unhealthy_threshold = 2
         timeout             = 10
         protocol            = "HTTP"
         matcher             = "200-399"
