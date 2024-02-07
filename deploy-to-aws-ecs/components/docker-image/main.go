@@ -29,13 +29,7 @@ func main() {
 	}
 
 	r.GET("/introspect/env", svc.GetEnvHandler)
-	r.GET("/introspect/terraform", svc.GetTerraformHandler)
-	r.GET("/introspect/secrets", svc.GetSecretsHandler)
-	r.GET("/introspect/defaults", svc.GetDefaultsHandler)
-	r.GET("/introspect/sandbox", svc.GetSandboxHandler)
 	r.GET("/introspect/nuon", svc.GetNuonHandler)
-	r.GET("/introspect/docker-build", svc.GetDockerBuildHandler)
-	r.GET("/introspect/external-image", svc.GetExternalImageHandler)
 
 	r.GET("/", discoverHandler)
 	r.GET("/livez", healthSvc.GetLivezHandler)
