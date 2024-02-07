@@ -57,6 +57,17 @@ module "ingress" {
       port              = 8080
       target_type       = "ip"
       create_attachment = false
+      health_check = {
+        enabled             = true
+        interval            = 30
+        path                = "/livez"
+        port                = "traffic-port"
+        healthy_threshold   = 3
+        unhealthy_threshold = 3
+        timeout             = 6
+        protocol            = "HTTP"
+        matcher             = "200-399"
+      }
     }
   }
 
