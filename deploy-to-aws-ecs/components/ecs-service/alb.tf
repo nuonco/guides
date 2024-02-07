@@ -52,7 +52,7 @@ module "ingress" {
 
   target_groups = {
     api = {
-      name              = "api"
+      name_prefix       = "api-"
       protocol          = "HTTP"
       port              = 8080
       target_type       = "ip"
