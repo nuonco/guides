@@ -3,7 +3,7 @@ module "ingress" {
 
   name                       = var.service_name
   vpc_id                     = var.vpc_id
-  subnets                    = local.subnet_id_list
+  subnets                    = local.public_subnet_id_list
   enable_deletion_protection = false
 
   security_group_ingress_rules = {
@@ -25,7 +25,7 @@ module "ingress" {
   security_group_egress_rules = {
     all = {
       ip_protocol = "-1"
-      cidr_ipv4   = "10.0.0.0/16"
+      cidr_ipv4   = "0.0.0.0/0"
     }
   }
 

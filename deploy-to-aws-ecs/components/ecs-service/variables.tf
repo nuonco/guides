@@ -1,5 +1,6 @@
 locals {
-  subnet_id_list = split(" ", trim(var.subnet_ids, "[]"))
+  private_subnet_id_list = split(" ", trim(var.private_subnet_ids, "[]"))
+  public_subnet_id_list  = split(" ", trim(var.public_subnet_ids, "[]"))
 }
 
 # Service config
@@ -30,7 +31,11 @@ variable "vpc_id" {
   type = string
 }
 
-variable "subnet_ids" {
+variable "private_subnet_ids" {
+  type = string
+}
+
+variable "public_subnet_ids" {
   type = string
 }
 

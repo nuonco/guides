@@ -34,12 +34,12 @@ module "service" {
     }
   }
 
-  subnet_ids = local.subnet_id_list
+  subnet_ids = local.private_subnet_id_list
   security_group_rules = {
     ingress_http = {
       type                     = "ingress"
       from_port                = 0
-      to_port                  = 5000
+      to_port                  = 0
       protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = module.ingress.security_group_id
