@@ -59,12 +59,12 @@ module "ingress" {
       create_attachment = false
       health_check = {
         enabled             = true
-        interval            = 30
+        interval            = 10
         path                = "/livez"
         port                = "traffic-port"
-        healthy_threshold   = 3
-        unhealthy_threshold = 3
-        timeout             = 6
+        healthy_threshold   = 1
+        unhealthy_threshold = 1
+        timeout             = 10
         protocol            = "HTTP"
         matcher             = "200-399"
       }
