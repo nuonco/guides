@@ -16,15 +16,15 @@ module "service" {
       port_mappings = [
         {
           name          = "http"
-          containerPort = 8080
-          hostPort      = 8080
+          containerPort = 5000
+          hostPort      = 5000
           protocol      = "http"
         }
       ]
       memory_reservation = 100
       environment        = []
       health_check = {
-        command = ["CMD-SHELL", "curl -f localhost:8080/livez || exit 1"]
+        command = ["CMD-SHELL", "curl -f localhost:5000/livez || exit 1"]
       }
     }
   }
@@ -33,7 +33,7 @@ module "service" {
     service = {
       target_group_arn = module.ingress.target_groups["api"].arn
       container_name   = "api"
-      container_port   = 8080
+      container_port   = 5000
     }
   }
 
@@ -42,7 +42,7 @@ module "service" {
     ingress_http = {
       type                     = "ingress"
       from_port                = 0
-      to_port                  = 8080
+      to_port                  = 5000
       protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = module.ingress.security_group_id
