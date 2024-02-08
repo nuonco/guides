@@ -1,3 +1,3 @@
-# Deploy to AWS ECS
+# Create an AWS ECS BYOC App
 
-This is a sample project demonstration how to deploy an app to AWS ECS using Nuon.
+This project contains sample code for our [Create an AWS ECS BYOC App](https://docs.nuon.co/guides/create-an-aws-ecs-byoc-app) guide on our [docs site](https://docs.nuon.co/).
