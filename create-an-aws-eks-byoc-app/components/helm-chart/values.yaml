@@ -1,0 +1,36 @@
+---
+env:
+  NUON_APP_ID: ""
+  NUON_ORG_ID: ""
+  NUON_INSTALL_ID: ""
+
+image:
+  repository: ""
+  tag: ""
+
+serviceAccount:
+  name: ""
+  annotations: {}
+
+worker:
+  autoscaling:
+    minReplicas: 1
+    maxReplicas: 2
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 50
+
+api:
+  port: 8080
+
+  ingresses:
+    public_domain: api.INSTALL_PUBLIC_DOMAIN
+
+  nlbs:
+    public_domain: nlb.INSTALL_PUBLIC_DOMAIN
+    public_domain_certificate: nbl.PUBLIC_DOMAIN_CERTIFICATE
+
+  autoscaling:
+    minReplicas: 1
+    maxReplicas: 1
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 50
