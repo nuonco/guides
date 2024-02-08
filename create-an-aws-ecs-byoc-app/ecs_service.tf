@@ -4,7 +4,7 @@ resource "nuon_terraform_module_component" "ecs_service" {
 
   public_repo = {
     repo      = "nuonco/guides"
-    directory = "deploy-to-aws-ecs/components/ecs-service"
+    directory = "create-an-aws-ecs-byoc-app/components/ecs-service"
     branch    = "main"
   }
 
