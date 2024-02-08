@@ -1,8 +1,0 @@
----
-name: pull request checks
-"on":
-  pull_request:
-    types: [opened, synchronize]
-jobs:
-  check-pr:
-    uses: nuonco/.github/.github/workflows/pull_request.yml@main
