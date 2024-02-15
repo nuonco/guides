@@ -1,5 +1,5 @@
 output "private_subnet_ids" {
-  value = local.private_subnet_id_list
+  value = var.private_subnet_ids
 }
 
 output "public_subnet_ids" {

@@ -47,7 +47,7 @@ module "service" {
     }
   }
 
-  subnet_ids = local.private_subnet_id_list
+  subnet_ids = var.private_subnet_ids
   security_group_rules = {
     ingress_http = {
       type                     = "ingress"
