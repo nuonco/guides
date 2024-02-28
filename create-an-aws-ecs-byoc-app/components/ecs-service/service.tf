@@ -16,8 +16,8 @@ module "service" {
       port_mappings = [
         {
           name          = "http"
-          containerPort = 5000
-          hostPort      = 5000
+          containerPort = 8080
+          hostPort      = 8080
           protocol      = "http"
         }
       ]
@@ -43,7 +43,7 @@ module "service" {
     service = {
       target_group_arn = module.ingress.target_groups["api"].arn
       container_name   = "api"
-      container_port   = 5000
+      container_port   = 8080
     }
   }
 
