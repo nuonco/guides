@@ -54,7 +54,7 @@ module "ingress" {
     api = {
       name_prefix       = "api-"
       protocol          = "HTTP"
-      port              = 5000
+      port              = 8080
       target_type       = "ip"
       create_attachment = false
       health_check = {
