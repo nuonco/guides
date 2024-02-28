@@ -47,7 +47,7 @@ module "service" {
     }
   }
 
-  subnet_ids = local.private_subnet_id_list
+  subnet_ids = data.aws_subnets.private.ids
   security_group_rules = {
     ingress_http = {
       type                     = "ingress"
