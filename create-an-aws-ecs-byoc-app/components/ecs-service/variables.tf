@@ -1,8 +1,3 @@
-locals {
-  private_subnet_id_list = split(" ", trim(var.private_subnet_ids, "[]"))
-  public_subnet_id_list  = split(" ", trim(var.public_subnet_ids, "[]"))
-}
-
 # Service config
 
 variable "service_name" {
@@ -36,14 +31,6 @@ variable "install_id" {
 # Load balancer config
 
 variable "vpc_id" {
-  type = string
-}
-
-variable "private_subnet_ids" {
-  type = string
-}
-
-variable "public_subnet_ids" {
   type = string
 }
 

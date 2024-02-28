@@ -1,7 +1,7 @@
 output "private_subnet_ids" {
-  value = local.private_subnet_id_list
+  value = data.aws_subnets.private.ids
 }
 
 output "public_subnet_ids" {
-  value = local.public_subnet_id_list
+  value = data.aws_subnets.public.ids
 }
