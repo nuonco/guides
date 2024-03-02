@@ -1,9 +1,5 @@
 ---
 env:
-  DATABASE_URL: ""
-  AUTH_MODE: ""
-  LOGICAL_PUBLISHER_HOST: ""
-  PG_PROXY_PASSWORD: ""
 
 image:
   repository: ""
@@ -15,13 +11,12 @@ serviceAccount:
 
 api:
   port: 8080
-
-  ingresses:
-    public_domain: api.INSTALL_PUBLIC_DOMAIN
+  readinessProbe: /readyz
+  livenessProbe: /livez
 
   nlbs:
-    public_domain: nlb.INSTALL_PUBLIC_DOMAIN
-    public_domain_certificate: nbl.PUBLIC_DOMAIN_CERTIFICATE
+    public_domain: ""
+    public_domain_certificate: ""
 
   autoscaling:
     minReplicas: 1

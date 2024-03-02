@@ -22,10 +22,16 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - name: http
-              containerPort: 8080
-              hostPort: 8080
-          readinessProbe: null
-          livenessProbe: null
+              containerPort: {{ .Values.api.port }}
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.api.readiness_probe}}
+              port: http
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.api.liveness_probe}}
+              port: http
           resources:
             limits:
               cpu: 100m
