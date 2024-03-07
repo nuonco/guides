@@ -4,6 +4,7 @@ module "service" {
   name        = var.service_name
   cluster_arn = var.cluster_arn
 
+  desired_count = 3
   cpu    = 1024
   memory = 4096
 
@@ -43,7 +44,7 @@ module "service" {
     service = {
       target_group_arn = module.ingress.target_groups["api"].arn
       container_name   = "api"
-      container_port   = 8080
+      container_port   = var.container_port
     }
   }
 
@@ -51,8 +52,8 @@ module "service" {
   security_group_rules = {
     ingress_http = {
       type                     = "ingress"
-      from_port                = 0
-      to_port                  = 0
+      from_port                = var.container_port
+      to_port                  = var.container_port
       protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = module.ingress.security_group_id

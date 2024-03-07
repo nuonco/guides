@@ -1,4 +1,7 @@
 # Service config
+variable "container_port" {
+  default = 8080
+}
 
 variable "service_name" {
   type = string
