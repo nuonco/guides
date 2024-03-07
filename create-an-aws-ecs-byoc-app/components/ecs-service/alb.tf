@@ -52,11 +52,14 @@ module "ingress" {
 
   target_groups = {
     api = {
-      name_prefix       = "api-"
+      name_prefix       = "api"
       protocol          = "HTTP"
-      port              = 8080
+      backend_port              = var.container_port
       target_type       = "ip"
       create_attachment = false
+      deregistration_delay              = 5
+      load_balancing_cross_zone_enabled = true
+
       health_check = {
         enabled             = true
         interval            = 10
