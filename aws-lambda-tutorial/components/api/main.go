@@ -56,8 +56,7 @@ func post(event events.APIGatewayV2HTTPRequest) (events.APIGatewayProxyResponse,
 		return response(http.StatusUnprocessableEntity, "", err)
 	}
 
-	id := event.PathParameters["id"]
-	if _, err := strconv.Atoi(id); err != nil {
+	if _, err := strconv.Atoi(w.ID); err != nil {
 		return response(http.StatusBadRequest, "", err)
 	}
 

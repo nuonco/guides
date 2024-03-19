@@ -30,6 +30,12 @@ module "api_gateway" {
   protocol_type                         = "HTTP"
   create_default_stage_access_log_group = true
 
+  default_route_settings = {
+    detailed_metrics_enabled = true
+    throttling_burst_limit   = 100
+    throttling_rate_limit    = 100
+  }
+
   cors_configuration = {
     allow_headers = ["content-type", "x-amz-date", "authorization", "x-api-key", "x-amz-security-token", "x-amz-user-agent"]
     allow_methods = ["*"]
@@ -43,4 +49,17 @@ resource "aws_lambda_permission" "permission" {
   action        = "lambda:InvokeFunction"
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${module.api_gateway.apigatewayv2_api_execution_arn}/*/*"
+}
+
+resource "aws_route53_record" "custom_domain_record" {
+  zone_id = var.zone_id
+  name    = var.domain_name
+  type    = "A"
+  ttl     = "60"
+
+  alias {
+    name                   = module.api_gateway.apigatewayv2_domain_name_configuration[0].target_domain_name
+    zone_id                = module.api_gateway.apigatewayv2_domain_name_configuration[0].hosted_zone_id
+    evaluate_target_health = false
+  }
 }
