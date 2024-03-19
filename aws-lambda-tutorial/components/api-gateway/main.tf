@@ -50,3 +50,15 @@ resource "aws_lambda_permission" "permission" {
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${module.api_gateway.apigatewayv2_api_execution_arn}/*/*"
 }
+
+resource "aws_route53_record" "custom_domain_record" {
+  zone_id = var.zone_id
+  name    = var.domain_name
+  type    = "CNAME"
+  ttl     = "300"
+
+  records = [
+    "${module.api_gateway.apigatewayv2_api_id}.execute-api.${data.aws_region.current.name}.amazonaws.com"
+  ]
+
+}
