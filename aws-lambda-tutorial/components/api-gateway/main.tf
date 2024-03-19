@@ -30,6 +30,12 @@ module "api_gateway" {
   protocol_type                         = "HTTP"
   create_default_stage_access_log_group = true
 
+  default_route_settings = {
+    detailed_metrics_enabled = true
+    throttling_burst_limit   = 100
+    throttling_rate_limit    = 100
+  }
+
   cors_configuration = {
     allow_headers = ["content-type", "x-amz-date", "authorization", "x-api-key", "x-amz-security-token", "x-amz-user-agent"]
     allow_methods = ["*"]
