@@ -98,3 +98,6 @@ value = "{{.nuon.components.certificate.outputs.public_domain_certificate_arn}}"
 [[components.var]]
 name  = "lambda_function_arn"
 value = "{{.nuon.components.get_function.outputs.lambda_function_arn}}"
+[[components.var]]
+name  = "zone_id"
+value = "{{.nuon.install.sandbox.outputs.public_domain.zone_id}}"
