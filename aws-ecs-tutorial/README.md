@@ -1,4 +1,4 @@
-# Create an AWS ECS BYOC App
+# Create an AWS ECS App
 
 This project contains sample code for our [Create an AWS ECS App](https://docs.nuon.co/tutorials/aws-ecs-app-tutorial) guide on our [docs site](https://docs.nuon.co/).
 
