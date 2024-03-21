@@ -1,4 +1,4 @@
-module github.com/nuonco/guides/aws-ecs-tutorial/components/docker-image
+module github.com/nuonco/guides/byo-vpc-tutorial/components/docker-image
 
 go 1.22.1
 

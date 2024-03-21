@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/nuonco/guides/aws-ecs-tutorial/components/docker-image/internal/health"
-	"github.com/nuonco/guides/aws-ecs-tutorial/components/docker-image/internal/introspection"
+	"github.com/nuonco/guides/byo-vpc-tutorial/components/docker-image/internal/health"
+	"github.com/nuonco/guides/byo-vpc-tutorial/components/docker-image/internal/introspection"
 	"go.uber.org/zap"
 )
 
