@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/nuonco/guides/deploy-to-aws-ecs/components/docker-image/internal/introspection"
+	"github.com/nuonco/guides/aws-eks-tutorial/components/docker-image/internal/introspection"
 )
 
 type discoverEndpoint struct {
