@@ -1,3 +1,3 @@
-resource "nuon_app" "my_ecs_app" {
-  name = "my_ecs_app"
+resource "nuon_app" "my_byovpc_app" {
+  name = "my_byovpc_app"
 }
