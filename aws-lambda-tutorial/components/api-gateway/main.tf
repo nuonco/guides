@@ -11,12 +11,6 @@ locals {
       payload_format_version = "2.0"
       timeout_milliseconds   = 12000
     }
-
-    // "DELETE /widgets/{id}" = {
-    //   lambda_arn             = var.lambda_function_arn
-    //   payload_format_version = "2.0"
-    //   timeout_milliseconds   = 12000
-    // }
   }
 }
 
