@@ -15,7 +15,8 @@ locals {
 }
 
 module "api_gateway" {
-  source = "terraform-aws-modules/apigateway-v2/aws"
+  source  = "terraform-aws-modules/apigateway-v2/aws"
+  version = "~> 5.1.0"
 
   name                                  = var.name
   integrations                          = local.integrations

@@ -1,12 +1,13 @@
 module "service" {
-  source = "terraform-aws-modules/ecs/aws//modules/service"
+  source  = "terraform-aws-modules/ecs/aws//modules/service"
+  version = "~> 5.11.0"
 
   name        = var.service_name
   cluster_arn = var.cluster_arn
 
   desired_count = 3
-  cpu    = 1024
-  memory = 4096
+  cpu           = 1024
+  memory        = 4096
 
   container_definitions = {
     api = {
