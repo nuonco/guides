@@ -1,5 +1,6 @@
 module "ingress" {
-  source = "terraform-aws-modules/alb/aws"
+  source  = "terraform-aws-modules/alb/aws"
+  version = "~> 9.10.0"
 
   name                       = var.service_name
   vpc_id                     = var.vpc_id
@@ -52,11 +53,11 @@ module "ingress" {
 
   target_groups = {
     api = {
-      name_prefix       = "api"
-      protocol          = "HTTP"
-      backend_port              = var.container_port
-      target_type       = "ip"
-      create_attachment = false
+      name_prefix                       = "api"
+      protocol                          = "HTTP"
+      backend_port                      = var.container_port
+      target_type                       = "ip"
+      create_attachment                 = false
       deregistration_delay              = 5
       load_balancing_cross_zone_enabled = true
 
