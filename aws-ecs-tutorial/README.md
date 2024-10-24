@@ -4,4 +4,4 @@ This project contains sample code for our [Create an AWS ECS App](https://docs.n
 
 The [./terraform-app-config](./terraform-app-config) directory contains a sample Terraform project for creating an ECS app. The [./components](./components) directory contains the components the app consists of.
 
-![architecture diagram](/aws-ecs-app-tutorial-diagram.jpg)
+![architecture diagram](./aws-ecs-app-tutorial-diagram.jpg)
