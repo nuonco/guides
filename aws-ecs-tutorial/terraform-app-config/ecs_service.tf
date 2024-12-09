@@ -22,12 +22,12 @@ resource "nuon_terraform_module_component" "ecs_service" {
 
   var {
     name  = "image_url"
-    value = "{{.nuon.components.docker_image.image.repository.uri}}"
+    value = "traefik/whoami"
   }
 
   var {
     name  = "image_tag"
-    value = "{{.nuon.components.docker_image.image.tag}}"
+    value = "latest"
   }
 
   var {
